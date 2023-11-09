@@ -173,6 +173,7 @@ main {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
+  height: 87%;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -181,6 +182,18 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+
+form[name="reserve"] {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+form[name="reserve"].hidden {
+  opacity: 0;
+}
+.success-message{
+  display: none;
 }
 
 .modal-body {
