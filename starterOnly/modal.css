@@ -97,7 +97,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 } 
 
@@ -166,19 +165,18 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
 }
 
 .content {
-  margin: 5% auto;
+  margin: 20% 0 auto;
   width: 100%;
   max-width: 500px;
-  height: 87%;
+  height: 90%;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
   color: #fff;
   padding-top: 10px;
@@ -433,7 +431,6 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
 }
 .hero-content::after {
   content: "";
@@ -508,7 +505,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 36px;
     white-space: normal;
   }
   .hero-text {
