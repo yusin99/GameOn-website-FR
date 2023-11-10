@@ -136,6 +136,7 @@ submitModal.addEventListener('submit', function (e) {
         successMessage.style.top = "50%";
         successMessage.style.left = "50%";
         successMessage.style.transform = "translate(-50%, -50%)";
+        successMessage.style.width = "100%";
 
         // Append the success message to the document body
         modalBody.appendChild(successMessage);
