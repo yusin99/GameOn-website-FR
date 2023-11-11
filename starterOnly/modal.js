@@ -100,7 +100,7 @@ submitModal.addEventListener('submit', function (e) {
         { conditions: firstName.value.length < 2, error: 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.' },
         { conditions: lastName.value.length < 2, error: 'Veuillez entrer 2 caractères ou plus pour le champ du nom.' },
         { conditions: !emailFormat.test(emailAddress.value), error: 'Veuillez entrer une adresse email valide.' },
-        { conditions: (isNaN(Date.parse(birthDate.value))) || (birth > today), error: 'Veuillez entrer une date valide au format aaaa-mm-jj' },
+        { conditions: (isNaN(Date.parse(birthDate.value))) || (birth > today), error: birth > today ? 'Vous ne pouvez pas sélectionner une date dans le futur' : 'Veuillez entrer une date valide au format jj-mm-aaaa' },
         { conditions: !tourneyFormat.test(tourneys.value), error: 'Vous devez insérer une valeur numérique.' },
         { conditions: isLocationChecked !== LOCATION_CHECKED, error: 'Vous devez sélectionner une ville.' },
         { conditions: !(conditions.checked), error: 'Vous devez accepter les conditions d\'utilisation.' },
