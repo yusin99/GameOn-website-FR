@@ -80,6 +80,7 @@ function outputResult(){
 submitModal.addEventListener('submit', function (e) {
     const emailFormat = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,63})$/;
     const tourneyFormat = /^[0-9]{1,100}$/;
+    const nameRegex = /^[A-Za-z]+$/;
     const birth = new Date(birthDate.value);
     const today = new Date();
     const LOCATION_CHECKED = 1;
@@ -97,8 +98,8 @@ submitModal.addEventListener('submit', function (e) {
     }
 
     const formsData = [
-        { conditions: firstName.value.length < 2, error: 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.' },
-        { conditions: lastName.value.length < 2, error: 'Veuillez entrer 2 caractères ou plus pour le champ du nom.' },
+        { conditions: firstName.value.length < 2 || !nameRegex.test(firstName.value), error: !nameRegex.test(firstName.value) ? 'Veuillez utiliser que des lettres' : 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.' },
+        { conditions: lastName.value.length < 2 || !nameRegex.test(lastName.value), error: !nameRegex.test(lastName.value) ? 'Veuillez utiliser que des lettres' : 'Veuillez entrer 2 caractères ou plus pour le champ du nom.' },
         { conditions: !emailFormat.test(emailAddress.value), error: 'Veuillez entrer une adresse email valide.' },
         { conditions: (isNaN(Date.parse(birthDate.value))) || (birth > today), error: birth > today ? 'Vous ne pouvez pas sélectionner une date dans le futur' : 'Veuillez entrer une date valide au format jj-mm-aaaa' },
         { conditions: !tourneyFormat.test(tourneys.value), error: 'Vous devez insérer une valeur numérique.' },
