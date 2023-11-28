@@ -102,7 +102,7 @@ submitModal.addEventListener('submit', function (e) {
     }
 
     const formsData = [
-        { conditions: firstName.value.length < 2 || !nameRegex.test(firstName.value), error: !nameRegex.test(firstName.value) ? 'Veuillez utiliser que des lettres' : 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.' },
+        { conditions: firstName.value.length < 2 || !nameRegex.test(firstName.value), error: nameRegex.test(firstName.value) ? 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.' : 'Veuillez utiliser que des lettres' },
         { conditions: lastName.value.length < 2 || !nameRegex.test(lastName.value), error: !nameRegex.test(lastName.value) ? 'Veuillez utiliser que des lettres' : 'Veuillez entrer 2 caractères ou plus pour le champ du nom.' },
         { conditions: !emailFormat.test(emailAddress.value), error: 'Veuillez entrer une adresse email valide.' },
         { conditions: (isNaN(Date.parse(birthDate.value))) || (birth > today), error: birth > today ? 'Vous ne pouvez pas sélectionner une date dans le futur' : 'Veuillez entrer une date valide au format jj-mm-aaaa' },
