@@ -1,9 +1,13 @@
 function editNav() {
-    var x = document.getElementById("myTopnav");
+    const x = document.getElementById("myTopnav");
+    const body = document.body;
+
     if (x.className === "topnav") {
         x.className += " responsive";
+        body.style.overflow = 'hidden';
     } else {
         x.className = "topnav";
+        body.style.overflow = 'scroll';
     }
 }
 
